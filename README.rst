@@ -20,7 +20,7 @@ rpi-ws281x mock
 
 
 
-This package mocks the behavior of the rpi-ws281x library
+This package mocks the behavior of the rpi-ws281x library for testing purposes and to run projects that use rpi-ws281x on non Raspbian systems
 
 
 * Free software: MIT license
