@@ -4,6 +4,6 @@
 
 __author__ = """Harm van Zeeland"""
 __email__ = 'harm.van.zeeland@gmail.com'
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 from .rpi_ws281x_mock import PixelStrip, Adafruit_NeoPixel, Color
