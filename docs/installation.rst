@@ -49,3 +49,25 @@ Once you have a copy of the source, you can install it with:
 
 .. _Github repo: https://github.com/HarmvZ/rpi_ws281x_mock
 .. _tarball: https://github.com/HarmvZ/rpi_ws281x_mock/tarball/master
+
+
+In a docker container
+---------------------
+
+You can also install this library into a docker container. This allows you to build a development/testing environment for applications using `rpi_ws281x`.
+Example `Dockerfile`:
+
+.. code-block::
+
+    # Pull Raspberry Pi 3 image
+    FROM balenalib/raspberrypi3-debian-python:latest
+    # Install python and update
+    RUN apt-get update && apt-get install -y python3 python3-dev python3-pip python3-virtualenv
+
+    # Activate virtualenv
+    ENV VIRTUAL_ENV=/opt/venv
+    RUN python3 -m virtualenv --python=/usr/bin/python3 $VIRTUAL_ENV
+    ENV PATH="$VIRTUAL_ENV/BIN:$PATH"
+
+    # Install rpi_ws281x_mock
+    RUN python3 -m pip install rpi_ws281x_mock
