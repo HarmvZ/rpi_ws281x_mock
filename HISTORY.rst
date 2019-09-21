@@ -2,6 +2,12 @@
 History
 =======
 
+0.1.3 (2019-09-21)
+------------------
+
+* Add test for getPixels()
+* Improve documentation
+
 0.1.2 (2019-09-20)
 ------------------
 
