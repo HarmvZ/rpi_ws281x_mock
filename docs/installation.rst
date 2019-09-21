@@ -55,9 +55,10 @@ In a docker container
 ---------------------
 
 You can also install this library into a docker container. This allows you to build a development/testing environment for applications using `rpi_ws281x`.
-Example `Dockerfile`:
 
-.. code-block::
+Example `Dockerfile`
+
+.. code-block:: dockerfile
 
     # Pull Raspberry Pi 3 image
     FROM balenalib/raspberrypi3-debian-python:latest
