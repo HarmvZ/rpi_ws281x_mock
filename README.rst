@@ -22,7 +22,7 @@ rpi-ws281x mock
 
 
 
-This package mocks the behavior of the rpi-ws281x library for testing purposes and to run projects that use rpi-ws281x on non Raspbian systems
+This package mocks the behavior of the `rpi_ws281x`_ Python library. This is used for testing a project that uses `rpi_ws281x`_ on non-Raspbian systems. Simply replace the pip installation of `rpi_ws281x` with `rpi_ws281x_mock` in your development environment to start using it.
 
 
 * Free software: MIT license
