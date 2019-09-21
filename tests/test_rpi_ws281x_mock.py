@@ -100,3 +100,11 @@ def test_set_brightness(b, pixel_strip):
 
 def test_num_pixels(pixel_strip):
     assert pixel_strip.numPixels() == NUM_PIXELS
+
+def test_get_pixels(pixel_strip):
+    expected_strip = []
+    for i in range(10):
+        c = Color(i*25, i*25, i*25)
+        expected_strip.append(c)
+        pixel_strip.setPixelColor(i, c)
+    assert pixel_strip.getPixels() == expected_strip
