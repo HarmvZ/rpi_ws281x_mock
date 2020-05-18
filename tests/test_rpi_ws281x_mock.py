@@ -11,6 +11,7 @@ from rpi_ws281x import PixelStrip, Adafruit_NeoPixel, Color
 
 NUM_PIXELS = 10
 
+
 @pytest.fixture
 def pixel_strip():
     """
@@ -20,15 +21,18 @@ def pixel_strip():
     ps.begin()
     return ps
 
+
 def test_initialize():
     PixelStrip(0, 0)
     Color(0, 0, 0)
     Adafruit_NeoPixel(0, 0)
 
+
 def test_begin():
-    ps = PixelStrip(0,0)
+    ps = PixelStrip(0, 0)
     ps.begin()
     assert ps.started
+
 
 def set_get_pixel_color(pixel_strip, pixel, color):
     pixel_strip.setPixelColor(pixel, color)
@@ -36,6 +40,7 @@ def set_get_pixel_color(pixel_strip, pixel, color):
     pixel_strip.show()
     assert pixel_strip._leds[pixel] == color
     assert pixel_strip.getPixelColor(pixel) == color
+
 
 @pytest.mark.parametrize(
     "p,c",
@@ -48,10 +53,11 @@ def set_get_pixel_color(pixel_strip, pixel, color):
         (5, Color(255, 0, 255)),
         (6, Color(0, 0, 255)),
         (7, Color(0, 0, 0)),
-    ]
+    ],
 )
 def test_set_pixel(p, c, pixel_strip):
     set_get_pixel_color(pixel_strip, p, c)
+
 
 def set_get_pixel_color_rgb(pixel_strip, pixel, r, g, b):
     pixel_strip.setPixelColorRGB(pixel, r, g, b)
@@ -64,6 +70,7 @@ def set_get_pixel_color_rgb(pixel_strip, pixel, r, g, b):
     assert c.g == g
     assert c.b == b
 
+
 @pytest.mark.parametrize(
     "p,r,g,b",
     [
@@ -75,7 +82,7 @@ def set_get_pixel_color_rgb(pixel_strip, pixel, r, g, b):
         (5, 255, 0, 255),
         (6, 0, 0, 255),
         (7, 0, 0, 0),
-    ]
+    ],
 )
 def test_set_pixel_rgb(p, r, g, b, pixel_strip):
     set_get_pixel_color_rgb(pixel_strip, p, r, g, b)
@@ -91,20 +98,20 @@ def set_get_brightness(pixel_strip, brightness):
     assert c1 == c * brightness / 255
     assert brightness == pixel_strip.getBrightness()
 
-@pytest.mark.parametrize(
-    "b",
-    [0,1,15,50,100,150,200,250,255]
-)
+
+@pytest.mark.parametrize("b", [0, 1, 15, 50, 100, 150, 200, 250, 255])
 def test_set_brightness(b, pixel_strip):
     set_get_brightness(pixel_strip, b)
+
 
 def test_num_pixels(pixel_strip):
     assert pixel_strip.numPixels() == NUM_PIXELS
 
+
 def test_get_pixels(pixel_strip):
     expected_strip = []
     for i in range(10):
-        c = Color(i*25, i*25, i*25)
+        c = Color(i * 25, i * 25, i * 25)
         expected_strip.append(c)
         pixel_strip.setPixelColor(i, c)
     assert pixel_strip.getPixels() == expected_strip
