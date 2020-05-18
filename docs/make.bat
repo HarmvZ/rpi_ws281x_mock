@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=rpi_ws281x_mock
+set SPHINXPROJ=rpi_ws281x
 
 if "%1" == "" goto help
 
