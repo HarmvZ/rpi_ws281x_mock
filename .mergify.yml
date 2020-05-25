@@ -1,0 +1,11 @@
+pull_request_rules:
+  - name: Automatic merge of pyup-bot pr on build success
+    conditions:
+      - status-success=codecov/patch
+      - status-success=codecov/project
+      - status-success=continuous-integration/travis-ci/pr
+      - status-success=continuous-integration/travis-ci/push
+      - status-success=pyup.io/safety-ci
+    actions:
+      merge:
+        method: merge
