@@ -6,6 +6,7 @@ pull_request_rules:
       - status-success=continuous-integration/travis-ci/pr
       - status-success=continuous-integration/travis-ci/push
       - status-success=pyup.io/safety-ci
+      - author=pyup-bot
     actions:
       merge:
         method: merge
