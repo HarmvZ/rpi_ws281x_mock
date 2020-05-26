@@ -20,6 +20,9 @@ rpi-ws281x mock
         :target: https://pyup.io/repos/github/HarmvZ/rpi_ws281x_mock/
         :alt: Updates
 
+.. image:: https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/HarmvZ/rpi_ws281x_mock&style=flat
+        :target: https://mergify.io
+        :alt: Mergify Status
 
 
 This package mocks the behavior of the `rpi_ws281x`_ Python library. This is used for testing a project that uses `rpi_ws281x`_ on non-Raspbian systems. Simply replace the pip installation of `rpi_ws281x` with `rpi_ws281x_mock` in your development environment to start using it.
