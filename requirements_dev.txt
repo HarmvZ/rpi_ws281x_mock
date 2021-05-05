@@ -43,7 +43,7 @@ readme-renderer==26.0
 regex==2020.6.8
 requests==2.24.0
 requests-toolbelt==0.9.1
-six==1.15.0
+six==1.16.0
 snowballstemmer==2.0.0
 Sphinx==3.1.1
 sphinxcontrib-applehelp==1.0.2
